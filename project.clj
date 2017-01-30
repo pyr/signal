@@ -1,4 +1,4 @@
-(defproject spootnik/signal "0.2.1-SNAPSHOT"
+(defproject spootnik/signal "0.2.1"
   :description "system signal handler for clojure."
   :url "https://github.com/pyr/signal"
   :license {:name "MIT/ISC License"}
