@@ -1,22 +1,22 @@
 (ns signal.handler
   "Signal handling functions")
 
-(defn ->signal
+(defn ^sun.misc.Signal ->signal
   "Convert a keyword to an appropriate Signal instance."
   [signal]
   (sun.misc.Signal. (-> signal name .toUpperCase)))
 
-(defn signal->number
+(defn ^Long signal->number
   "Find out a signal's number"
   [signal]
   (-> signal ->signal .getNumber))
 
-(defn signal->kw
+(defn ^clojure.lang.Keyword signal->kw
   "Translate a signal to a keyword"
   [^sun.misc.Signal s]
   (-> s .getName .toLowerCase keyword))
 
-(defn ->handler
+(defn ^sun.misc.SignalHandler ->handler
   "Convert class to signal handler."
   [handler]
   (proxy [sun.misc.SignalHandler] []

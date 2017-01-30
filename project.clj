@@ -1,6 +1,7 @@
-(defproject spootnik/signal "0.2.0"
+(defproject spootnik/signal "0.2.1-SNAPSHOT"
   :description "system signal handler for clojure."
   :url "https://github.com/pyr/signal"
   :license {:name "MIT/ISC License"}
   :jvm-opts ["-Dclojure.compiler.direct-linking=true"]
-  :dependencies [[org.clojure/clojure "1.8.0"]])
+  :profiles {:dev {:global-vars {*warn-on-reflection* true}}}
+  :dependencies [[org.clojure/clojure "1.9.0-alpha14"]])
