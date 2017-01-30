@@ -9,7 +9,7 @@ This projects bring one macro and one function of interest:
 Pull-in the following dependency:
 
 ```clojure
-  [spootnik/signal "0.2.0"]
+  [spootnik/signal "0.2.1"]
 ```
 
 The main signatures:
