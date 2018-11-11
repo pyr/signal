@@ -29,18 +29,14 @@ A few additional signatures may come in handy:
 Here's one way of hooking this up with a component system:
 
 ```clojure
-(let [system (atom (make-system))]
-
-  (swap! system component/start-system)
-  
   (with-handler :term
     (info "caught SIGTERM, quitting.")
-    (swap! system component/stop-system)
+    (stop-daemon)
     (System/exit 0))
 
   (with-handler :hup
     (info "caught SIGHUP, reloading.")
-    (swap! system (comp component/start-system component/stop-system))))
+	(reload-daemon))
 ```
 
 
