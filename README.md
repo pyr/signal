@@ -11,7 +11,7 @@ This projects bring one macro and one function of interest.
 Pull-in the following dependency:
 
 ```clojure
-  [spootnik/signal "0.2.1"]
+  [spootnik/signal "0.2.4"]
 ```
 
 The main signatures:
@@ -33,12 +33,12 @@ Here's one way of hooking this up with a component system:
 ```clojure
   (with-handler :term
     (info "caught SIGTERM, quitting.")
-    (stop-daemon)
+    (alter-var-root #'system component/stop-system)
     (System/exit 0))
 
   (with-handler :hup
     (info "caught SIGHUP, reloading.")
-	(reload-daemon))
+	(alter-var-root #'system (comp component/start-system component/stop-system)))
 ```
 
 
