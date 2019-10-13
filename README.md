@@ -2,7 +2,9 @@ signal: UNIX signal handlers in clojure
 =======================================
 
 This is just a bit of code I end up copying through-out my projects.
-This projects bring one macro and one function of interest:
+This projects bring one macro and one function of interest.
+
+[![CircleCI](https://circleci.com/gh/pyr/signal.svg?style=svg)](https://circleci.com/gh/pyr/signal)
 
 ## Usage
 
