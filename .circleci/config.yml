@@ -1,0 +1,32 @@
+version: 2
+shared: &shared
+  steps:
+    - checkout
+    - restore_cache: # restores saved cache if checksum hasn't changed since the last run
+        key: riemann-{{ checksum "project.clj" }}
+    - run: lein deps
+    - save_cache: # generate and store cache in the .m2 directory using a key template
+        paths:
+          - ~/.m2
+          - ~/.lein
+        key: riemann-{{ checksum "project.clj" }}
+    - run: lein test2junit
+    - store_test_results:
+        path: target/test2junit
+
+jobs:
+  jdk11:
+    docker: # run the steps with Docker
+      - image: circleci/clojure:openjdk-11-lein-2.9.1
+    <<: *shared
+  jdk8:
+    docker: # run the steps with Docker
+      - image: circleci/clojure:openjdk-9-lein-2.9.1
+    <<: *shared
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - jdk9
+      - jdk11
