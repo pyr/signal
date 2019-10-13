@@ -19,14 +19,9 @@ jobs:
     docker: # run the steps with Docker
       - image: circleci/clojure:openjdk-11-lein-2.9.1
     <<: *shared
-  jdk9:
-    docker: # run the steps with Docker
-      - image: circleci/clojure:openjdk-9-lein-2.9.1
-    <<: *shared
-
+    
 workflows:
   version: 2
   test:
     jobs:
-      - jdk9
       - jdk11
