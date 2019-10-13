@@ -3,7 +3,7 @@
               [k version :exclusions exclusions])
       paths (:paths cfg)]
 
-  (defproject spootnik/signal "0.2.3"
+  (defproject spootnik/signal "0.2.4-SNAPSHOT"
     :description "system signal handler for clojure."
     :url "https://github.com/pyr/signal"
     :license {:name "MIT/ISC License"}
