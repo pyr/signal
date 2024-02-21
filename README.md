@@ -4,14 +4,14 @@ signal: UNIX signal handlers in clojure
 This is just a bit of code I end up copying through-out my projects.
 This projects bring one macro and one function of interest.
 
-[![CircleCI](https://circleci.com/gh/pyr/signal.svg?style=svg)](https://circleci.com/gh/pyr/signal)
+[![CircleCI](https://circleci.com/gh/pyr/signal.svg?style=svg)](https://circleci.com/gh/pyr/signal) [![Clojars Project](https://img.shields.io/clojars/v/spootnik/signal.svg)](https://clojars.org/spootnik/signal)
 
 ## Usage
 
 Pull-in the following dependency:
 
 ```clojure
-  [spootnik/signal "0.2.4"]
+  [spootnik/signal "0.2.5"]
 ```
 
 The main signatures:
